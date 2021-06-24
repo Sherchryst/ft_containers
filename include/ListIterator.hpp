@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 15:41:44 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/24 15:52:01 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/24 21:34:27 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,45 @@ namespace ft
 {
 	template <class T>
 	class ListIterator {
-
-		protected:
-			pointer _ptr;
-
+/**========================================================================
+ **                          DEFINITION MEMBER TYPE
+ *========================================================================**/
 		public:
-
 			typedef T value_type;
 			typedef T& reference;
 			typedef Node<T>* pointer;
 
-			ListIterator(void);
-			ListIterator();
+/**========================================================================
+ **                          NODE POINTER
+ *========================================================================**/
+		protected:
+			pointer _ptr;
 
-			ListIterator(ListIterator const & src);
-			~ListIterator(void);
+/**========================================================================
+ **                          CONTRUCTOR DESTRUCTOR
+ *========================================================================**/
+		public:
+			ListIterator(void){};
 
-			ListIterator &	operator=(const ListIterator &rhs);
+			ListIterator(pointer ptr): _ptr(ptr){};
+
+			ListIterator(ListIterator const & src)
+			{
+				*this = src;
+			};
+
+			~ListIterator(void){};
+
+/**========================================================================
+ **                          OVERLOAD OPERATOR
+ *========================================================================**/
+			ListIterator &	operator=(const ListIterator &rhs)
+			{
+				_ptr = rhs._ptr;
+				return (*this);
+			}
 
 
-		private:
 
 	};
 };
