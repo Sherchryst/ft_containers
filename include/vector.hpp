@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 16:35:18 by sgah              #+#    #+#             */
-/*   Updated: 2021/10/22 16:50:24 by sgah             ###   ########.fr       */
+/*   Updated: 2021/11/02 18:15:05 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ namespace ft {
 					_alloc.construct(_last, value);
 					_last++;
 				}
-
 			}
 
 			template <class InputIterator>
@@ -88,7 +87,10 @@ namespace ft {
 			void assign(size_type n, const T& u);
 			allocator_type get_allocator() const;
 			// iterators:
-			iterator begin();
+			iterator begin()
+			{
+				return (_start);
+			}
 			const_iterator begin() const;
 			iterator end();
 			const_iterator end() const;
