@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 16:35:18 by sgah              #+#    #+#             */
-/*   Updated: 2021/10/21 02:10:00 by sgah             ###   ########.fr       */
+/*   Updated: 2021/10/22 16:50:24 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ namespace ft {
 
 			typedef implementation defined const_iterator; // See 23.1
 
-			typedef implementation defined size_type; // See 23.1
+			typedef std::size_t size_type; // See 23.1
 
-			typedef implementation defined difference_type;// See 23
+			typedef std::ptrdiff_t difference_type;// See 23
 
 			typedef T value_type;
 
@@ -50,12 +50,28 @@ namespace ft {
 		private:
 
 			allocator_type	_alloc;
+			pointer			_first;
+			pointer			_last;
+			pointer			_endalloc;
 
 		public:
 
-			explicit vector(const Allocator& alloc = Allocator()):_alloc(alloc){}
+			explicit vector(const Allocator& alloc = Allocator()):
+			_alloc(alloc), _first(nullptr), _last(nullptr), _endalloc(nullptr){}
 
-			explicit vector(size_type n, const T& value = T(),const Allocator& = Allocator());
+			explicit vector(size_type n, const T& value = T(),const Allocator& alloc = Allocator()):
+			:_alloc(alloc), _first(nullptr), _last(nullptr), _endalloc(nullptr)
+			{
+				_first = _alloc.allocate(n);
+				_endalloc = _first + n;
+				_last = _first;
+				for (size_type i = 0; i < n; i++)
+				{
+					_alloc.construct(_last, value);
+					_last++;
+				}
+
+			}
 
 			template <class InputIterator>
 			vector(InputIterator first, InputIterator last, const Allocator& = Allocator());
