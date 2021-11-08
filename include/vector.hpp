@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 16:35:18 by sgah              #+#    #+#             */
-/*   Updated: 2021/11/02 18:15:05 by sgah             ###   ########.fr       */
+/*   Updated: 2021/11/08 17:42:09 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <memory>
 # include <algorithm>
 # include <cstddef>
+# include "type_traits.hpp"
 
 namespace ft {
 
@@ -81,9 +82,12 @@ namespace ft {
 			}
 
 			~vector();
+
 			vector<T,Allocator>& operator=(const vector<T,Allocator>& x);
+
 			template <class InputIterator>
 			void assign(InputIterator first, InputIterator last);
+
 			void assign(size_type n, const T& u);
 			allocator_type get_allocator() const;
 			// iterators:
