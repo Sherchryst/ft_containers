@@ -6,9 +6,11 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 17:38:55 by sgah              #+#    #+#             */
-/*   Updated: 2021/11/03 20:27:16 by sgah             ###   ########.fr       */
+/*   Updated: 2021/11/17 17:04:07 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
 
 namespace ft
 {
@@ -46,50 +48,50 @@ namespace ft
  *?  Otherwise, value is equal to false.
  *========================================================================**/
 	template <bool is_integral, typename T>
-	struct is_integral_res
+	struct is_integral_base
 	{
 		typedef T type;
 		static const bool value = is_integral;
 	};
 
 	template <typename>
-	struct is_integral_type : public is_integral_res<false, bool> {};
+	struct is_integral_type : public is_integral_base<false, bool> {};
 
 	template <>
-	struct is_integral_type<bool> : public is_integral_res<true, bool> {};
+	struct is_integral_type<bool>: public is_integral_base<true, bool> {};
 
 	template <>
-	struct is_integral_type<char> : public is_integral_res<true, char> {};
+	struct is_integral_type<char>: public is_integral_base<true, char> {};
 
 	template <>
-	struct is_integral_type<signed char> : public is_integral_res<true, signed char> {};
+	struct is_integral_type<signed char>: public is_integral_base<true, signed char> {};
 
 	template <>
-	struct is_integral_type<short int> : public is_integral_res<true, short int> {};
+	struct is_integral_type<short int>: public is_integral_base<true, short int> {};
 
 	template <>
-	struct is_integral_type<int> : public is_integral_res<true, int> {};
+	struct is_integral_type<int>: public is_integral_base<true, int> {};
 
 	template <>
-	struct is_integral_type<long int> : public is_integral_res<true, long int> {};
+	struct is_integral_type<long int>: public is_integral_base<true, long int> {};
 
 	template <>
-	struct is_integral_type<long long int> : public is_integral_res<true, long long int> {};
+	struct is_integral_type<long long int>: public is_integral_base<true, long long int> {};
 
 	template <>
-	struct is_integral_type<unsigned char> : public is_integral_res<true, unsigned char> {};
+	struct is_integral_type<unsigned char>: public is_integral_base<true, unsigned char> {};
 
 	template <>
-	struct is_integral_type<unsigned short int> : public is_integral_res<true, unsigned short int> {};
+	struct is_integral_type<unsigned short int>: public is_integral_base<true, unsigned short int> {};
 
 	template <>
-	struct is_integral_type<unsigned int> : public is_integral_res<true, unsigned int> {};
+	struct is_integral_type<unsigned int>: public is_integral_base<true, unsigned int> {};
 
 	template <>
-	struct is_integral_type<unsigned long int> : public is_integral_res<true, unsigned long int> {};
+	struct is_integral_type<unsigned long int>: public is_integral_base<true, unsigned long int> {};
 
 	template <>
-	struct is_integral_type<unsigned long long int> : public is_integral_res<true, unsigned long long int> {};
+	struct is_integral_type<unsigned long long int>: public is_integral_base<true, unsigned long long int> {};
 
 	template <typename T>
 	struct is_integral : public is_integral_type<T> {};
@@ -170,6 +172,5 @@ namespace ft
 		return (ft::pair<T1, T2>(x, y));
 	}
 /*============================ END OF FT::PAIR ============================*/
-
 
 }

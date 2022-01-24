@@ -6,7 +6,23 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 17:41:56 by sgah              #+#    #+#             */
-/*   Updated: 2021/11/02 18:15:05 by sgah             ###   ########.fr       */
+/*   Updated: 2021/11/17 17:04:07 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+
+namespace ft
+{
+/**========================================================================
+ **                           VALID_ITERATOR
+ *?
+ *========================================================================**/
+	template <bool is_valid, typename T>
+	struct valid_iterator_tag_base
+	{
+		typedef T type;
+		const static bool value = is_valid;
+	};
+
+}

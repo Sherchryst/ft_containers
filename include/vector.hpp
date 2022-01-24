@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 16:35:18 by sgah              #+#    #+#             */
-/*   Updated: 2021/11/08 17:42:09 by sgah             ###   ########.fr       */
+/*   Updated: 2021/11/17 17:04:07 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,15 @@ namespace ft {
 			pointer			_first;
 			pointer			_last;
 			pointer			_endalloc;
+			size_type		_capacity;
 
 		public:
 
 			explicit vector(const Allocator& alloc = Allocator()):
-			_alloc(alloc), _first(nullptr), _last(nullptr), _endalloc(nullptr){}
+			_alloc(alloc), _first(nullptr), _last(nullptr), _endalloc(nullptr), _capacity(0){}
 
 			explicit vector(size_type n, const T& value = T(),const Allocator& alloc = Allocator()):
-			:_alloc(alloc), _first(nullptr), _last(nullptr), _endalloc(nullptr)
+			:_alloc(alloc), _first(nullptr), _last(nullptr), _endalloc(nullptr), _capacity(n)
 			{
 				_first = _alloc.allocate(n);
 				_endalloc = _first + n;
@@ -74,7 +75,13 @@ namespace ft {
 			}
 
 			template <class InputIterator>
-			vector(InputIterator first, InputIterator last, const Allocator& = Allocator());
+			vector(InputIterator first, InputIterator last,
+			const Allocator& alloc = Allocator(),
+			typename ft::enable_if<!ft::is_integral<InputIterator>::value, InputIterator>::type* = nullptr):
+			_alloc(alloc)
+			{
+
+			}
 
 			vector(const vector<T,Allocator>& src): _alloc(allocator_type())
 			{
@@ -104,7 +111,12 @@ namespace ft {
 			const_reverse_iterator rend() const;
 			// 23.2.4.2 capacity:
 			size_type size() const;
-			size_type max_size() const;
+
+			size_type max_size() const
+			{
+				return allocator_type().max_size();
+			}
+
 			void resize(size_type sz, T c = T());
 			size_type capacity() const;
 			bool empty() const;
