@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 02:38:28 by sgah              #+#    #+#             */
-/*   Updated: 2022/01/25 03:32:59 by sgah             ###   ########.fr       */
+/*   Updated: 2022/01/26 14:28:37 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ namespace ft
 
 		Color		color;
 
-		Node(value_type data, Node* parent, Node* left, Node* right, Color color): data(data), parent(parent), left(left), right(right), color(color) {}
+		Node(value_type value, Node* parent, Node* left, Node* right, Color color): value(value), parent(parent), left(left), right(right), color(color) {}
 	};
 }

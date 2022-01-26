@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 17:41:56 by sgah              #+#    #+#             */
-/*   Updated: 2022/01/25 16:55:21 by sgah             ###   ########.fr       */
+/*   Updated: 2022/01/26 14:56:45 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -218,13 +218,13 @@ namespace ft
 	template<class Iterator, class Iter>
 	bool operator==(ft::bidirectional_iterator<Iterator, ft::Node<Iterator> > const &lhs, ft::bidirectional_iterator<Iter, ft::Node<Iter> > const &rhs)
 	{
-		return (lhs._ptr == rhs._ptr));
+		return (lhs._ptr == rhs._ptr);
 	}
 
 	template<class Iterator, class Iter>
 	bool operator!=(ft::bidirectional_iterator<Iterator, ft::Node<Iterator> > const &lhs, ft::bidirectional_iterator<Iter, ft::Node<Iter> > const &rhs)
 	{
-		return (lhs._ptr != rhs._ptr));
+		return (lhs._ptr != rhs._ptr);
 	}
 /*============================ END OF BIDIRECTIONAL ITERATOR ==============*/
 
@@ -263,7 +263,7 @@ namespace ft
 
 			random_access_iterator(pointer ptr): _ptr(ptr){}
 
-			random_access_iterator(const random_access_iterator &rhs): _ptr(rhs._ptr)){}
+			random_access_iterator(const random_access_iterator &rhs): _ptr(rhs._ptr){}
 
 			virtual ~random_access_iterator(void){}
 
@@ -342,7 +342,7 @@ namespace ft
 
 			random_access_iterator	operator=(const random_access_iterator &rhs)
 			{
-				_ptr = rhs._ptr);
+				_ptr = rhs._ptr;
 				return (*this);
 			}
 
