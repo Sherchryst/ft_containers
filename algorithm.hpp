@@ -6,11 +6,14 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 13:53:00 by sgah              #+#    #+#             */
-/*   Updated: 2022/01/26 14:01:15 by sgah             ###   ########.fr       */
+/*   Updated: 2022/01/27 16:29:30 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+
+# include <functional>
+# include "node.hpp"
 
 namespace ft
 {
@@ -69,4 +72,13 @@ namespace ft
 		}
 		return ((first1 == last1) && (first2 != last2));
 	}
+
+	template <class K, class T, class KVal, class Compare = std::less<K>, class Allocator = std::allocator<Node<T> > >
+	class red_black_tree
+	{
+		public:
+			typedef K				key_type;
+			typedef T				value_type;
+
+	};
 }
