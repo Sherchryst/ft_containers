@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 14:04:10 by sgah              #+#    #+#             */
-/*   Updated: 2022/01/26 15:20:58 by sgah             ###   ########.fr       */
+/*   Updated: 2022/01/28 14:49:10 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,11 @@ namespace ft
 
 			explicit stack(const container_type &cont = container_type()) : _container(cont){}
 			stack(const stack& src): _container(src._container){}
-			~stack() {}
+			~stack(){}
 
-			// = operator overload
 			stack operator=(const stack &rhs)
 			{
-				if (this != &rhs)
-				{
-					_container = rhs._container;
-				}
+				_container = rhs._container;
 				return *this;
 			}
 
