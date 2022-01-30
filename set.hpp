@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 04:44:50 by sgah              #+#    #+#             */
-/*   Updated: 2022/01/30 04:59:44 by sgah             ###   ########.fr       */
+/*   Updated: 2022/01/31 00:24:45 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,6 @@
 
 namespace ft
 {
-	template <class T, class U>
-	struct element : public std::unary_function<T, U>
-	{
-		const U& operator()(const T& elem) const
-		{
-			return elem;
-		}
-	};
-
 	template < class T, class Compare = std::less<T>, class Alloc = std::allocator<T> >
 	class set
 	{
@@ -295,6 +286,15 @@ namespace ft
 			{
 				_binary_tree.swap(x._binary_tree);
 			}
+	};
+
+	template <class T, class U>
+	struct element : public std::unary_function<T, U>
+	{
+		const U& operator()(const T& elem) const
+		{
+			return elem;
+		}
 	};
 
 	template < class T, class Compare, class Alloc>
