@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 17:41:56 by sgah              #+#    #+#             */
-/*   Updated: 2022/01/26 14:56:45 by sgah             ###   ########.fr       */
+/*   Updated: 2022/01/29 16:06:20 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ namespace ft
 	{
 		public:
 			typedef N										node_type;
-			typedef N*										node_ptr;
+			typedef node_type*								node_ptr;
 			typedef T										value_type;
 			typedef T*										pointer;
 			typedef T&										reference;
@@ -90,6 +90,14 @@ namespace ft
 			typedef const T&								const_reference;
 			typedef typename std::ptrdiff_t					difference_type;
 			typedef typename ft::bidirectional_iterator_tag	iterator_category;
+
+			bidirectional_iterator(): _begin(NULL), _end(NULL), _ptr(NULL) {}
+
+			bidirectional_iterator(node_ptr root, node_ptr nil, node_ptr ptr): _begin(root), _end(nil), _ptr(ptr) {}
+
+			bidirectional_iterator(const bidirectional_iterator &src):_begin(src._begin), _end(src._end), _ptr(src._ptr) {}
+
+			virtual ~bidirectional_iterator() {}
 
 			operator				bidirectional_iterator<value_type const, node_type const>() const
 			{
@@ -203,7 +211,7 @@ namespace ft
 			node_ptr	precursor(node_ptr ptr)
 			{
 				if (ptr->left != _end)
-					return(maxi(ptr->left));
+					return(max(ptr->left));
 
 				node_ptr ptr_parent = ptr->parent;
 
