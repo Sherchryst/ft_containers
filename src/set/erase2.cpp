@@ -1,4 +1,4 @@
-#include "common.hpp"
+#include "test_set.hpp"
 #include <list>
 
 #define T1 int
@@ -13,7 +13,7 @@ void	ft_erase(SET &st, U param)
 	printSize(st);
 }
 
-int		main(void)
+int		erase2(void)
 {
 	std::list<T1> lst;
 	unsigned int lst_size = 6;

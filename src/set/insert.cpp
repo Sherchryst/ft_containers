@@ -1,4 +1,4 @@
-#include "common.hpp"
+#include "test_set.hpp"
 
 #define T1 std::string
 typedef TESTED_NAMESPACE::set<T1>::iterator iterator;
@@ -28,7 +28,7 @@ void	ft_insert(SET &st, U param, V param2)
 	printSize(st);
 }
 
-int		main(void)
+int		insert(void)
 {
 	TESTED_NAMESPACE::set<T1> st, st2;
 

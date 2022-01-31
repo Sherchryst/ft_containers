@@ -1,4 +1,4 @@
-#include "common.hpp"
+#include "test_set.hpp"
 
 #define T1 char
 
@@ -13,7 +13,7 @@ void	cst(const SET &lhs, const SET &rhs)
 	std::cout << "gt: " << (lhs >  rhs) << " | ge: " << (lhs >= rhs) << std::endl;
 }
 
-int		main(void)
+int		relational_ope(void)
 {
 	TESTED_NAMESPACE::set<T1> st1;
 	TESTED_NAMESPACE::set<T1> st2;

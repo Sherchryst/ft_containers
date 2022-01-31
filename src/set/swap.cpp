@@ -1,9 +1,9 @@
-#include "common.hpp"
+#include "test_set.hpp"
 #include <list>
 
 #define T1 char
 
-int main (void)
+int swap (void)
 {
 	std::list<T1> lst;
 

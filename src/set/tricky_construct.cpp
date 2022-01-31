@@ -1,9 +1,9 @@
-#include "common.hpp"
+#include "test_set.hpp"
 #include <list>
 
 #define T1 std::string
 
-int		main(void)
+int		tricky_construct(void)
 {
 	std::list<T1> lst;
 	std::list<T1>::iterator itlst;

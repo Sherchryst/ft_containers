@@ -1,4 +1,4 @@
-#include "common.hpp"
+#include "test_set.hpp"
 #include <list>
 
 #define T1 char
@@ -9,7 +9,7 @@ void	is_empty(T const &st)
 	std::cout << "is_empty: " << st.empty() << std::endl;
 }
 
-int		main(void)
+int		empty(void)
 {
 	std::list<T1> lst;
 	unsigned int lst_size = 7;

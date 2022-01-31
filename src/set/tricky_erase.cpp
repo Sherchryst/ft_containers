@@ -1,4 +1,4 @@
-#include "common.hpp"
+#include "test_set.hpp"
 
 #define T1 int
 
@@ -12,7 +12,7 @@ void	ft_erase(SET &st, const T1 param)
 	printSize(st);
 }
 
-int		main(void)
+int		tricky_erase(void)
 {
 	TESTED_NAMESPACE::set<T1> st;
 

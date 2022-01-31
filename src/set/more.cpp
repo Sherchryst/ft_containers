@@ -1,4 +1,4 @@
-#include "common.hpp"
+#include "test_set.hpp"
 
 #define T1 int
 
@@ -11,7 +11,7 @@ struct ft_more {
 typedef TESTED_NAMESPACE::set<T1, ft_more> ft_st;
 typedef TESTED_NAMESPACE::set<T1, ft_more>::iterator ft_st_it;
 
-int		main(void)
+int		more(void)
 {
 	ft_st st;
 

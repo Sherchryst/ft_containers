@@ -1,9 +1,9 @@
-#include "common.hpp"
+#include "test_set.hpp"
 #include <list>
 
 #define T1 foo<int>
 
-int		main(void)
+int		rite_arrow(void)
 {
 	std::list<T1> lst;
 	unsigned int lst_size = 5;

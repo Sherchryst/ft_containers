@@ -1,4 +1,4 @@
-#include "common.hpp"
+#include "test_set.hpp"
 
 #define T1 int
 
@@ -20,7 +20,7 @@ void	ft_count(T1 const &k)
 	std::cout << "set::count(" << k << ")\treturned [" << st.count(k) << "]" << std::endl;
 }
 
-int		main(void)
+int		find_count(void)
 {
 	st.insert(42);
 	st.insert(25);

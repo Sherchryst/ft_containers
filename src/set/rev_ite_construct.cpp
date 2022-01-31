@@ -1,8 +1,8 @@
-#include "common.hpp"
+#include "test_set.hpp"
 
 #define T1 int
 
-int		main(void)
+int		rev_ite_contruct(void)
 {
 	TESTED_NAMESPACE::set<T1> st;
 	TESTED_NAMESPACE::set<T1>::iterator it = st.begin();

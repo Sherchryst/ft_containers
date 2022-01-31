@@ -1,4 +1,4 @@
-#include "common.hpp"
+#include "test_set.hpp"
 #include <list>
 
 #define T1 int
@@ -13,7 +13,7 @@ void	ft_insert(SET &st, U param, U param2)
 	printSize(st);
 }
 
-int		main(void)
+int		insert2(void)
 {
 	std::list<T1> lst;
 	std::list<T1>::iterator itlst;

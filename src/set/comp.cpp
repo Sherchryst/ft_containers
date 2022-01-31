@@ -1,4 +1,4 @@
-#include "common.hpp"
+#include "test_set.hpp"
 
 #define T1 char
 typedef TESTED_NAMESPACE::set<T1> _set;
@@ -17,7 +17,7 @@ void	ft_comp(const _set &st, const const_it &it1, const const_it &it2)
 	std::cout << "key_comp: " << res[0] << " | " << "value_comp: " << res[1] << std::endl;
 }
 
-int		main(void)
+int		comp(void)
 {
 	_set	st;
 

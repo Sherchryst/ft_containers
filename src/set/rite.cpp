@@ -1,9 +1,9 @@
-#include "common.hpp"
+#include "test_set.hpp"
 #include <list>
 
 #define T1 int
 
-int		main(void)
+int		rite(void)
 {
 	std::list<T1> lst;
 	unsigned int lst_size = 5;

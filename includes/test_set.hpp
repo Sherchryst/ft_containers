@@ -1,4 +1,4 @@
-#include "../base.hpp"
+#include "test.hpp"
 #if (USING_FT)
 # include "set.hpp"
 #else
@@ -6,6 +6,7 @@
 #endif /* !defined(STD) */
 
 #define _pair TESTED_NAMESPACE::pair
+
 
 template <typename T>
 std::string	printPair(const T &iterator, bool nl = true, std::ostream &o = std::cout)
