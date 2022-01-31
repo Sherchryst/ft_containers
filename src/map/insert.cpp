@@ -30,7 +30,7 @@ void	ft_insert(MAP &mp, U param, V param2)
 	printSize(mp);
 }
 
-int		main(void)
+int		insert(void)
 {
 	TESTED_NAMESPACE::map<T1, T2> mp, mp2;
 

@@ -18,7 +18,7 @@ void	ft_comp(const _map &mp, const const_it &it1, const const_it &it2)
 	std::cout << "key_comp: " << res[0] << " | " << "value_comp: " << res[1] << std::endl;
 }
 
-int		main(void)
+int		comp(void)
 {
 	_map	mp;
 

@@ -3,7 +3,7 @@
 #define T1 char
 #define T2 foo<std::string>
 
-int		main(void)
+int		op_sqbr(void)
 {
 	TESTED_NAMESPACE::map<T1, T2> mp;
 

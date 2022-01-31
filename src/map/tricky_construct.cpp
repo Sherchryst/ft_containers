@@ -5,7 +5,7 @@
 #define T2 std::string
 typedef TESTED_NAMESPACE::map<T1, T2>::value_type T3;
 
-int		main(void)
+int		tricky_construct(void)
 {
 	std::list<T3> lst;
 	std::list<T3>::iterator itlst;

@@ -23,7 +23,7 @@ void	ft_erase(MAP &mp, U param, V param2)
 	printSize(mp);
 }
 
-int		main(void)
+int		erase(void)
 {
 	std::list<T3> lst;
 	unsigned int lst_size = 10;

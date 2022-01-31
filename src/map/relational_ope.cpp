@@ -15,7 +15,7 @@ void	cmp(const MAP &lhs, const MAP &rhs)
 	std::cout << "gt: " << (lhs >  rhs) << " | ge: " << (lhs >= rhs) << std::endl;
 }
 
-int		main(void)
+int		relational_ope(void)
 {
 	TESTED_NAMESPACE::map<T1, T2> mp1;
 	TESTED_NAMESPACE::map<T1, T2> mp2;

@@ -39,7 +39,7 @@ void	ft_const_bound(const MAP &mp, const T1 &param)
 	std::cout << "equal_range: " << (ft_range.first == it[0] && ft_range.second == it[1]) << std::endl;
 }
 
-int		main(void)
+int		bounds(void)
 {
 	std::list<T3> lst;
 	unsigned int lst_size = 10;

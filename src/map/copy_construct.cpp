@@ -5,7 +5,7 @@
 #define T2 int
 typedef _pair<const T1, T2> T3;
 
-int		main(void)
+int		copy_construct(void)
 {
 	std::list<T3> lst;
 	unsigned int lst_size = 7;

@@ -15,7 +15,7 @@ void	ft_insert(MAP &mp, U param, U param2)
 	printSize(mp);
 }
 
-int		main(void)
+int		insert2(void)
 {
 	std::list<T3> lst;
 	std::list<T3>::iterator itlst;

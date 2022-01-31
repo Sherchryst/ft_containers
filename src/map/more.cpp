@@ -12,7 +12,7 @@ struct ft_more {
 typedef TESTED_NAMESPACE::map<T1, T2, ft_more> ft_mp;
 typedef TESTED_NAMESPACE::map<T1, T2, ft_more>::iterator ft_mp_it;
 
-int		main(void)
+int		more(void)
 {
 	ft_mp mp;
 

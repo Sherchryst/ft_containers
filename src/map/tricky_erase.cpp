@@ -14,7 +14,7 @@ void	ft_erase(MAP &mp, const T1 param)
 	printSize(mp);
 }
 
-int		main(void)
+int		tricky_erase(void)
 {
 	TESTED_NAMESPACE::map<T1, T2> mp;
 

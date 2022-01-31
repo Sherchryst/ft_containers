@@ -11,7 +11,7 @@ void	is_empty(T const &mp)
 	std::cout << "is_empty: " << mp.empty() << std::endl;
 }
 
-int		main(void)
+int		empty(void)
 {
 	std::list<T3> lst;
 	unsigned int lst_size = 7;

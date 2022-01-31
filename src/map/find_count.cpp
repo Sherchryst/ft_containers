@@ -21,7 +21,7 @@ void	ft_count(T1 const &k)
 	std::cout << "map::count(" << k << ")\treturned [" << mp.count(k) << "]" << std::endl;
 }
 
-int		main(void)
+int		find_count(void)
 {
 	mp[42] = "fgzgxfn";
 	mp[25] = "funny";
