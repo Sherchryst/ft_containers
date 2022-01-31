@@ -1,11 +1,34 @@
-#include "../base.hpp"
-#if !defined(USING_STD)
+#include "test.hpp"
+#if (USING_FT)
 # include "map.hpp"
 #else
 # include <map>
 #endif /* !defined(STD) */
 
 #define _pair TESTED_NAMESPACE::pair
+
+
+//*-------------------------------- MAP ------------------------------*/
+int		bounds(void);
+int		comp(void);
+int		copy_construct(void);
+int		empty(void);
+int		erase(void);
+int		erase2(void);
+int		find_count(void);
+int		insert(void);
+int		insert2(void);
+int		ite_arrow(void);
+int		more(void);
+int		op_sqbr(void);
+int		relational_ope(void);
+int		rev_ite_contruct(void);
+int		rite_arrow(void);
+int		rite(void);
+int		swap (void);
+int		tricky_construct(void);
+int		tricky_erase(void);
+
 
 template <typename T>
 std::string	printPair(const T &iterator, bool nl = true, std::ostream &o = std::cout)

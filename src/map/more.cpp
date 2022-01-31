@@ -1,4 +1,4 @@
-#include "common.hpp"
+#include "test_map.hpp"
 
 #define T1 int
 #define T2 std::string

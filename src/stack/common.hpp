@@ -1,5 +1,5 @@
 #include "../base.hpp"
-#if !defined(USING_STD)
+#if (USING_FT)
 # include "stack.hpp"
 #else
 # include <stack>
