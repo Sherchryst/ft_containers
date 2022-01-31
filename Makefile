@@ -40,7 +40,7 @@ $(NAME_MAP): $(OBJ_MAP)
 	@$(CC) $(OBJ_MAP) -o $(MAP_STL) -D USING_FT=0
 	@echo "MAP COMPILED"
 
-all: $(NAME_MAP) $(MAP_STL)
+all: $(NAME_MAP)
 
 map: $(NAME_MAP)
 
