@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 04:56:40 by sgah              #+#    #+#             */
-/*   Updated: 2022/01/31 00:25:23 by sgah             ###   ########.fr       */
+/*   Updated: 2022/01/31 03:28:58 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,15 @@
 
 namespace ft
 {
+	template <class T, class U>
+	struct first_element : public std::unary_function<T, U>
+	{
+		const U& operator()(const T& elem) const
+		{
+			return elem.first;
+		}
+	};
+
 	template < class Key, class T, class Compare = std::less<Key>, class Alloc = std::allocator<ft::pair<const Key,T> > >
 	class map
 	{
@@ -306,15 +315,6 @@ namespace ft
 			{
 				return _comp(x.first, y.first);
 			}
-	};
-
-	template <class T, class U>
-	struct first_element : public std::unary_function<T, U>
-	{
-		const U& operator()(const T& elem) const
-		{
-			return elem.first;
-		}
 	};
 
 	template <class Key, class T, class Compare, class Alloc>

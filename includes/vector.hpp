@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 16:35:18 by sgah              #+#    #+#             */
-/*   Updated: 2022/01/26 15:05:16 by sgah             ###   ########.fr       */
+/*   Updated: 2022/01/31 03:46:12 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -273,7 +273,7 @@ namespace ft {
 			void reserve(size_type n)
 			{
 				if (n > max_size())
-					throw std::length_error("allocator<T>::allocate(size_t n) 'n' exceeds maximum supported size");
+					throw std::length_error("std::bad_allocmaking");
 				if (n > _capacity)
 					reAlloc(n);
 			}
