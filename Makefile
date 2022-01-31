@@ -11,45 +11,50 @@ _Purple=\033[1;35m
 BUILD	= .build
 
 SRC_DIR	= ./src/
-DIR		= map
+DIR		= map set
 DIRS	= $(addprefix $(BUILD)/, $(DIR))
 
 INC		= -I./includes
 
-# FILES
-NAME_MAP= map_FT
-MAP_STL	= map_STL
-NAMES	= $(NAME_MAP) $(MAP_STL)
+MAIN	= main.cpp
+OBJ_MAIN:= $(MAIN:%.cpp=$(BUILD)/%.o)
 
-MAP		= bounds.cpp copy_construct.cpp erase2.cpp find_count.cpp insert.cpp main.cpp op_sqbr.cpp rev_ite_construct.cpp rite.cpp tricky_construct.cpp comp.cpp empty.cpp erase.cpp insert2.cpp ite_arrow.cpp more.cpp relational_ope.cpp rite_arrow.cpp swap.cpp tricky_erase.cpp
-
+# MAP
+MAP		= bounds.cpp copy_construct.cpp erase2.cpp find_count.cpp insert.cpp map.cpp op_sqbr.cpp rev_ite_construct.cpp rite.cpp tricky_construct.cpp comp.cpp empty.cpp erase.cpp insert2.cpp ite_arrow.cpp more.cpp relational_ope.cpp rite_arrow.cpp swap.cpp tricky_erase.cpp
 SRC_MAP	= $(addprefix map/, $(MAP))
 OBJ_MAP	:= $(SRC_MAP:%.cpp=$(BUILD)/%.o)
 
-SRC		= $(SRC_MAP)
+# SET
+SET		= bounds.cpp erase2.cpp insert.cpp relational_ope.cpp swap.cpp comp.cpp erase.cpp ite_arrow.cpp rev_ite_construct.cpp tricky_construct.cpp copy_construct.cpp find_count.cpp set.cpp rite_arrow.cpp tricky_erase.cpp empty.cpp insert2.cpp  more.cpp rite.cpp
+SRC_SET	= $(addprefix set/, $(SET))
+OBJ_SET	:= $(SRC_SET:%.cpp=$(BUILD)/%.o)
 
+# ALL
+SRC		= $(SRC_MAP) $(SR)
+NAME	= FT
 DEP		:= $(SRC:%.cpp=$(BUILD)/%.d)
+OBJ = $(OBJ_MAP) $(OBJ_SET) $(OBJ_MAIN)
 
 # COMPILATION
 CC		= clang++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 DFLAGS  = -MP -MMD
 
-$(NAME_MAP): $(OBJ_MAP)
-	@$(CC) $(OBJ_MAP) -o $(NAME_MAP) -D USING_FT=1
-	@$(CC) $(OBJ_MAP) -o $(MAP_STL) -D USING_FT=0
+$(NAME): $(OBJ)
+	@$(CC) $(OBJ) -o $(NAME) -D USING_FT=1
+	@$(CC) $(OBJ) -o STD -D USING_FT=0
 	@echo "MAP COMPILED"
 
-all: $(NAME_MAP)
+all: $(NAME)
 
-map: $(NAME_MAP)
+set: $(NAME_SET)
 
 clean:
 	@rm -rf $(BUILD)
 	@echo "\033[1;34mExecute:\t\033[1;33mCleaning build\t\033[0;32m[OK]\033[0m"
 
 fclean: clean
-	@rm -f $(NAMES)
+	@rm -f $(NAME)
 	@echo "\033[1;34mExecute:\t\033[1;33mCleaning exec\t\033[0;32m[OK]\033[0m"
 
 re: fclean all
