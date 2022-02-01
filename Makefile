@@ -11,29 +11,24 @@ _Purple=\033[1;35m
 BUILD	= .build
 
 SRC_DIR	= ./src/
-DIR		= map set
+DIR		=
 DIRS	= $(addprefix $(BUILD)/, $(DIR))
 
 INC		= -I./includes
 
-MAIN	= main.cpp
-OBJ_MAIN:= $(MAIN:%.cpp=$(BUILD)/%.o)
+# FILES
+NAME	= ft
+NAME1	= stl
 
-# MAP
-MAP		= bounds.cpp copy_construct.cpp erase2.cpp find_count.cpp insert.cpp map.cpp op_sqbr.cpp rev_ite_construct.cpp rite.cpp tricky_construct.cpp comp.cpp empty.cpp erase.cpp insert2.cpp ite_arrow.cpp more.cpp relational_ope.cpp rite_arrow.cpp swap.cpp tricky_erase.cpp
-SRC_MAP	= $(addprefix map/, $(MAP))
-OBJ_MAP	:= $(SRC_MAP:%.cpp=$(BUILD)/%.o)
+SRC		= main.cpp \
+		  test_vector.cpp \
+		  test_stack.cpp \
+		  test_map.cpp \
+		  test_set.cpp
 
-# SET
-SET		= bounds.cpp erase2.cpp insert.cpp relational_ope.cpp swap.cpp comp.cpp erase.cpp ite_arrow.cpp rev_ite_construct.cpp tricky_construct.cpp copy_construct.cpp find_count.cpp set.cpp rite_arrow.cpp tricky_erase.cpp empty.cpp insert2.cpp  more.cpp rite.cpp
-SRC_SET	= $(addprefix set/, $(SET))
-OBJ_SET	:= $(SRC_SET:%.cpp=$(BUILD)/%.o)
 
-# ALL
-SRC		= $(SRC_MAP) $(SR)
-NAME	= FT
 DEP		:= $(SRC:%.cpp=$(BUILD)/%.d)
-OBJ = $(OBJ_MAP) $(OBJ_SET) $(OBJ_MAIN)
+OBJ		:= $(SRC:%.cpp=$(BUILD)/%.o)
 
 # COMPILATION
 CC		= clang++
@@ -41,20 +36,19 @@ CFLAGS	= -Wall -Werror -Wextra -std=c++98
 DFLAGS  = -MP -MMD
 
 $(NAME): $(OBJ)
-	@$(CC) $(OBJ) -o $(NAME) -D USING_FT=1
-	@$(CC) $(OBJ) -o STD -D USING_FT=0
-	@echo "MAP COMPILED"
+	@$(CC) $(OBJ) -o $(NAME) -D TEST_FT=1
+	@$(CC) $(OBJ) -o $(NAME1) -D TEST_FT=0
+
 
 all: $(NAME)
 
-set: $(NAME_SET)
-
 clean:
 	@rm -rf $(BUILD)
+	@rm -rf test/root
 	@echo "\033[1;34mExecute:\t\033[1;33mCleaning build\t\033[0;32m[OK]\033[0m"
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(NAME) $(NAME1)
 	@echo "\033[1;34mExecute:\t\033[1;33mCleaning exec\t\033[0;32m[OK]\033[0m"
 
 re: fclean all
