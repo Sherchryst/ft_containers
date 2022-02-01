@@ -6,13 +6,14 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 13:53:00 by sgah              #+#    #+#             */
-/*   Updated: 2022/01/29 15:48:32 by sgah             ###   ########.fr       */
+/*   Updated: 2022/02/01 14:38:46 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 # include <functional>
+# include <memory>
 # include "node.hpp"
 
 namespace ft
